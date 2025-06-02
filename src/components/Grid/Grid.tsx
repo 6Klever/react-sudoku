@@ -1,10 +1,10 @@
-import { clsx } from 'clsx';
-import { useEffect, useState } from 'react';
+import { clsx } from "clsx";
+import { useEffect, useState } from "react";
 
-import { ModalWinner } from '../ModalWinner';
-import { generateSudokuGrid, isSudokuSolved, validateSudoku } from '../../utils/validateSudoku';
+import { ModalWinner } from "../ModalWinner";
+import { generateSudokuGrid, isSudokuSolved, validateSudoku } from "../../utils/validateSudoku";
 
-import './styles.scss';
+import "./styles.scss";
 
 interface SudokuGrid {
   error: boolean;
@@ -26,8 +26,8 @@ function Grid() {
         error: false,
         value: undefined,
         disabled: false,
-      }),
-    ),
+      })
+    )
   );
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function Grid() {
             return (
               <div key={`row-${i.toString()}`} className="row">
                 {grid?.map((cell, j) => {
-                  const inputStyles = clsx('cell', {
+                  const inputStyles = clsx("cell", {
                     error: cell?.error,
                   });
 
@@ -75,7 +75,7 @@ function Grid() {
                       maxLength={1}
                       readOnly={cell?.disabled}
                       type="text"
-                      value={cell?.value || ''}
+                      value={cell?.value || ""}
                       onChange={({ target }) => {
                         const newSudoku = validateSudoku({
                           sudoku: sudokuGrid,
