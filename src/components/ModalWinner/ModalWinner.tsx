@@ -1,3 +1,4 @@
+// src/components/ModalWinner/ModalWinner.tsx
 import "./styels.scss";
 
 interface Props {
@@ -5,7 +6,7 @@ interface Props {
   onClose: () => void;
 }
 
-function WinnerModal({ openWinnerModal, onClose }: Props) {
+function ModalWinner({ openWinnerModal, onClose }: Props) {
   if (!openWinnerModal) {
     return null;
   }
@@ -13,12 +14,10 @@ function WinnerModal({ openWinnerModal, onClose }: Props) {
   return (
     <div className="winnerModal">
       <div className="modalBg" />
-
       <div className="modalContent">
         <h4 className="title">Congratulations!</h4>
         <p className="description">SUDOKU was be solved!</p>
         <p className="description">Restart the game ?</p>
-
         <div className="btnsEndgameContainer">
           <button
             className="btn"
@@ -28,7 +27,6 @@ function WinnerModal({ openWinnerModal, onClose }: Props) {
           >
             Restart
           </button>
-
           <button className="btn" onClick={onClose}>
             Exit
           </button>
@@ -38,4 +36,4 @@ function WinnerModal({ openWinnerModal, onClose }: Props) {
   );
 }
 
-export default WinnerModal;
+export default ModalWinner;
