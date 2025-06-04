@@ -1,4 +1,3 @@
-// src/components/ModalWinner/ModalWinner.tsx
 import "./styels.scss";
 
 interface Props {
