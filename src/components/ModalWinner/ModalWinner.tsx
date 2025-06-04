@@ -2,9 +2,10 @@ import "./styels.scss";
 
 interface Props {
   openWinnerModal: boolean;
+  onClose: () => void;
 }
 
-function WinnerModal({ openWinnerModal }: Props) {
+function WinnerModal({ openWinnerModal, onClose }: Props) {
   if (!openWinnerModal) {
     return null;
   }
@@ -28,12 +29,7 @@ function WinnerModal({ openWinnerModal }: Props) {
             Restart
           </button>
 
-          <button
-            className="btn"
-            onClick={() => {
-              window.location.reload();
-            }}
-          >
+          <button className="btn" onClick={onClose}>
             Exit
           </button>
         </div>

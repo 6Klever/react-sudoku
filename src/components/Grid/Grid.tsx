@@ -95,7 +95,7 @@ function Grid() {
         </div>
       </div>
 
-      <ModalWinner openWinnerModal={showModalWinner} />
+      <ModalWinner openWinnerModal={showModalWinner} onClose={() => setShowModalWinner(false)} />
     </>
   );
 }
